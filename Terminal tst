@@ -1,0 +1,1767 @@
+
+MariaDB [(none)]>
+MariaDB [(none)]>  create user 'natanael'@'localhost';
+Query OK, 0 rows affected (0.252 sec)
+
+MariaDB [(none)]> grant all privileges on *.* to 'natanael'@'localhost';
+Query OK, 0 rows affected (0.095 sec)
+
+MariaDB [(none)]> exit
+Bye
+
+C:\xampp\mysql\bin>mysql -u natanael -p;
+ERROR 1045 (28000): Access denied for user 'natanael'@'localhost' (using password: YES)
+
+C:\xampp\mysql\bin>mysql -u natanael
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> mysql -u natanael
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'mysql -u natanael' at line 1
+MariaDB [(none)]> create database natanaelb;
+Query OK, 1 row affected (0.049 sec)
+
+MariaDB [(none)]> use natanael-b
+ERROR 1049 (42000): Unknown database 'natanael-b'
+MariaDB [(none)]> use natanael_b
+ERROR 1049 (42000): Unknown database 'natanael_b'
+MariaDB [(none)]> use natanaelb
+Database changed
+MariaDB [natanaelb]> create table tokobuku(
+    -> code_buku varchar (20) not null,
+    -> nama_buku varchar (40) not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3
+MariaDB [natanaelb]> crate table buku{
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku{' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku INT PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit INT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku INT PRIMARY KEY,
+nama_buku varchar (100),
+nomor_i...' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> uptade shine_31 set nama="nunung" where id=2;;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+uptade shine_31 set nama="nunung" where id=2' at line 1
+ERROR: No query specified
+
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku INT PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit INT
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku INT PRIMARY KEY,
+nama_buku varchar (100),
+nomor_i...' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku INT PRIMARY KEY,
+    -> nama_buku varchar (40),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit char(50)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku INT PRIMARY KEY,
+nama_buku varchar (40),
+nomor_is...' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku varchar(100),
+    -> nama_buku varchar(40),
+    -> nomor_isbn varchar(20),
+    -> tahun_terbit char(50)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku varchar(100),
+nama_buku varchar(40),
+nomor_isbn v...' at line 1
+MariaDB [natanaelb]> show tables;
+Empty set (0.052 sec)
+
+MariaDB [natanaelb]> create table buku(
+    -> kode_buku varchar(100),
+    -> nama_buku varchar (40),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit char(100)
+    -> );
+Query OK, 0 rows affected (0.278 sec)
+
+MariaDB [natanaelb]> show table buku
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'buku' at line 1
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn (20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRIMARY KEY,
+nama_buku varchar (100),
+nomor_isbn (20)
+)' at line 2
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar (30),
+    ->
+    -> nama_buku varchar (100),
+    -> nomor_isbn (20)
+    -> PRIMARY KEY ( kode_buku )
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(20)
+PRIMARY KEY ( kode_buku )
+)' at line 5
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRIMARY KEY,
+nama_buku varchar (100),
+nomor_isbn varchar (20)
+)' at line 2
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar (30),
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20)
+    -> );
+Query OK, 0 rows affected (0.257 sec)
+
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar PRIMARY KEY,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRIMARY KEY,' at line 2
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar (30),
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20)
+    -> );
+ERROR 1050 (42S01): Table 'detail_buku' already exists
+MariaDB [natanaelb]> drop table detail_buku;
+Query OK, 0 rows affected (0.233 sec)
+
+MariaDB [natanaelb]> ls
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ls' at line 1
+MariaDB [natanaelb]> create table buku_detail(
+    -> kode_buku varchar (20) not null,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20),
+    -> PRIMARY KEY (kode_buku)
+    -> );
+Query OK, 0 rows affected (0.258 sec)
+
+MariaDB [natanaelb]> create table penulis (
+    -> kode_distributor integer  (30) not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 2
+MariaDB [natanaelb]> create table penulis (
+    -> kode_penulis (30) not null,
+    -> p;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(30) not null,
+p' at line 2
+MariaDB [natanaelb]> create table penulis (
+    -> kode_penulis varchar (30) not null,
+    -> penulis varchar ( 40) not null,
+    -> PRIMARY KEY ( kode_penulis)
+    -> );
+Query OK, 0 rows affected (0.176 sec)
+
+MariaDB [natanaelb]> create table Distriutor (
+    -> kode_distributor integer (20),
+    -> distributor varchar (50),
+    -> PRIMARY KEY (kode_distributor)
+    -> );
+Query OK, 0 rows affected (0.243 sec)
+
+MariaDB [natanaelb]> insert into buku_detail( kode_buku , nama_buku , nomor_isbn ) values ( 'B1203' , 'bako' , 97987654916 );
+Query OK, 1 row affected (0.088 sec)
+
+MariaDB [natanaelb]> insert into buku_detail( kode_buku , nama_buku , nomor_isbn ) values ( 'B1204' , 'borax' , 97987654096 );
+Query OK, 1 row affected (0.079 sec)
+
+MariaDB [natanaelb]> insert into table penulis(
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table penulis(' at line 1
+MariaDB [natanaelb]> insert into table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpk. ipu');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpk. ipu')' at line 1
+MariaDB [natanaelb]> insert into table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpkpi');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpkpi')' at line 1
+MariaDB [natanaelb]> insert into penulis( kode_penulis , penulis) values ( 'buas102i', 'bpkpi');
+Query OK, 1 row affected (0.100 sec)
+
+MariaDB [natanaelb]> insert into penulis( kode_penulis , penulis) values ( 'asdm1029', 'andi');
+Query OK, 1 row affected (0.104 sec)
+
+MariaDB [natanaelb]> show database natanaelb
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database natanaelb' at line 1
+MariaDB [natanaelb]> show databases natanaelb;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'natanaelb' at line 1
+MariaDB [natanaelb]> drop table penulis
+    -> ;
+Query OK, 0 rows affected (0.204 sec)
+
+MariaDB [natanaelb]> drop table buku_detail
+    -> ;
+Query OK, 0 rows affected (0.197 sec)
+
+MariaDB [natanaelb]> color red
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'color red' at line 1
+MariaDB [natanaelb]> SELECT * FROM natanaelb;
+ERROR 1146 (42S02): Table 'natanaelb.natanaelb' doesn't exist
+MariaDB [natanaelb]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| alief              |
+| alifia_03          |
+| anggun_04          |
+| farhan_12          |
+| haikalxy           |
+| haikalzy           |
+| information_schema |
+| laundry_20         |
+| mysql              |
+| natanaelb          |
+| performance_schema |
+| phpmyadmin         |
+| sevita_34          |
++--------------------+
+13 rows in set (0.002 sec)
+
+MariaDB [natanaelb]> CREATE TABLE Distributor (
+    -> kode_distributor varchar (30) not null,
+    -> distributor varchar (100) not null,
+    -> PRIMARY KEY (kode_distributor)
+    -> );
+Query OK, 0 rows affected (0.229 sec)
+
+MariaDB [natanaelb]> create table pembelian (
+    -> id_pembelian varchar (30) not null,
+    -> nama_pembeli text (40) not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3
+MariaDB [natanaelb]> create table pembelian (
+    -> id_barang varchar (30) not null,
+    -> nama_pembeli text (40) not null,
+    -> PRIMARY KEY (id_barang)
+    -> );
+Query OK, 0 rows affected (0.202 sec)
+
+MariaDB [natanaelb]> drop table pembelian
+    -> ;
+Query OK, 0 rows affected (0.211 sec)
+
+MariaDB [natanaelb]> create table pelanggan (
+    -> id_pelanggan varchar (90) not null,
+    -> id_barang varchar (100) not null,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> Ctrl-C -- exit!
+Bye
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 12
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> Ctrl-C -- exit!
+Bye
+
+C:\xampp\mysql\bin>mysql -u natanael
+
+C:\xampp\mysql\bin>mysql -u natanael
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 13
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| alief              |
+| alifia_03          |
+| anggun_04          |
+| farhan_12          |
+| haikalxy           |
+| haikalzy           |
+| information_schema |
+| laundry_20         |
+| mysql              |
+| natanaelb          |
+| performance_schema |
+| phpmyadmin         |
+| sevita_34          |
++--------------------+
+13 rows in set (0.004 sec)
+
+MariaDB [(none)]> use natanaelb;
+Database changed
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
+| distriutor          |
++---------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> create table pembelian(
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 2
+MariaDB [natanaelb]> drop table distriutor;
+Query OK, 0 rows affected (0.231 sec)
+
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
++---------------------+
+2 rows in set (0.002 sec)
+
+MariaDB [natanaelb]> create table pembelian(
+    -> id int primary key auto_increment,
+    -> nama pembeli varchar(50),
+    -> judul buku
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'varchar(50),
+judul buku
+)' at line 3
+MariaDB [natanaelb]> create table pembelian(
+    -> id int primary key auto_increment,
+    -> nama_pembeli varchar(50),
+    -> judul_buku varchar(100),
+    -> jumlah char(20),
+    -> harga char(150)
+    -> );
+Query OK, 0 rows affected (0.258 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('', 'natan', 'ulum si pencuri', '1', '5.000');
+Query OK, 1 row affected, 1 warning (0.089 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('', 'bagas', 'cara menjadi dewa', '2', '150.000');
+Query OK, 1 row affected, 1 warning (0.093 sec)
+
+MariaDB [natanaelb]> create table pelanggan(
+    -> id int primary key auto_increment,
+    -> nama varchar(50),
+    -> jenis_buku varchar(100),
+    -> kode_buku char(150),
+    -> jumlah char(20)
+    -> );
+Query OK, 0 rows affected (0.257 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('','penno', 'novel', '124', '2');
+Query OK, 1 row affected, 1 warning (0.214 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('','udin', 'komik', '187', '1');
+Query OK, 1 row affected, 1 warning (0.086 sec)
+
+MariaDB [natanaelb]> create table penjualan(
+    -> kode_buku int primary key auto_increment,
+    -> judul_buku varchar(100),
+    -> nama varchar(50),
+    -> jumlah char(60),
+    -> harga char(70)
+    -> );
+Query OK, 0 rows affected (0.411 sec)
+
+MariaDB [natanaelb]> insert into penjualan values ('','luufy','sumanto','600','9.000');
+Query OK, 1 row affected, 1 warning (0.098 sec)
+
+MariaDB [natanaelb]> insert into penjualan values ('','alekkkkk','jumanto',90','1.000');
+    '> );Bye
+Ctrl-C -- exit!
+
+C:\xampp\mysql\bin>use natanaelb;
+'use' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp\mysql\bin>use natanaelb
+'use' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 14
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use natanaelb
+Database changed
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
+| pelanggan           |
+| pembelian           |
+| penjualan           |
++---------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from buku;
+Empty set (0.004 sec)
+
+MariaDB [natanaelb]> select * from buku;
+Empty set (0.001 sec)
+
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
+| pelanggan           |
+| pembelian           |
+| penjualan           |
++---------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from distributor;
+Empty set (0.004 sec)
+
+MariaDB [natanaelb]> select * from penjualan;
++-----------+------------+---------+--------+-------+
+| kode_buku | judul_buku | nama    | jumlah | harga |
++-----------+------------+---------+--------+-------+
+|         1 | luufy      | sumanto | 600    | 9.000 |
++-----------+------------+---------+--------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from pembelian;
++----+--------------+-------------------+--------+---------+
+| id | nama_pembeli | judul_buku        | jumlah | harga   |
++----+--------------+-------------------+--------+---------+
+|  1 | natan        | ulum si pencuri   | 1      | 5.000   |
+|  2 | bagas        | cara menjadi dewa | 2      | 150.000 |
+|  3 | penno        | novel             | 124    | 2       |
+|  4 | udin         | komik             | 187    | 1       |
++----+--------------+-------------------+--------+---------+
+4 rows in set (0.001 sec)
+
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> select * from pelanggan;
+Empty set (0.004 sec)
+
+MariaDB [natanaelb]> select * from pelanggan;
+Empty set (0.001 sec)
+
+MariaDB [natanaelb]> insert into pelanggan values(''.'jhoncena','komik','1945','9');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.'jhoncena','komik','1945','9')' at line 1
+MariaDB [natanaelb]> insert into pelanggan values('','jhoncena','komik','1945','9');
+Query OK, 1 row affected, 1 warning (0.084 sec)
+
+MariaDB [natanaelb]> insert into pelanggan values('','penno','novel','1140','3');
+Query OK, 1 row affected, 1 warning (0.084 sec)
+
+MariaDB [natanaelb]> selectl * from pelanggan;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'selectl * from pelanggan' at line 1
+MariaDB [natanaelb]> select * from pelanggan;
++----+----------+------------+-----------+--------+
+| id | nama     | jenis_buku | kode_buku | jumlah |
++----+----------+------------+-----------+--------+
+|  1 | jhoncena | komik      | 1945      | 9      |
+|  2 | penno    | novel      | 1140      | 3      |
++----+----------+------------+-----------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> insert into distribtor values ('','1','wahyu');
+ERROR 1146 (42S02): Table 'natanaelb.distribtor' doesn't exist
+MariaDB [natanaelb]> insert into distribtor values ('','88','wahyu');
+ERROR 1146 (42S02): Table 'natanaelb.distribtor' doesn't exist
+MariaDB [natanaelb]> insert into distributor values ('','88','wahyu');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into distributor values ('1','88','wahyu');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into distributor values('','88','wahyu');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into distributor values('','wahyu');
+Query OK, 1 row affected (0.086 sec)
+
+MariaDB [natanaelb]> select * from distributor;
++------------------+-------------+
+| kode_distributor | distributor |
++------------------+-------------+
+|                  | wahyu       |
++------------------+-------------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> insert into buku values('','B001','Geografis','87213894','Gramedia','2002','penno','90');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into buku values('','B001','Geografis','87213894','Gramedia','2002','penno','90');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> insert into buku values('','B001','Geografis','87213894');
+Query OK, 1 row affected (0.142 sec)
+
+MariaDB [natanaelb]> select * from buku:
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':' at line 1
+MariaDB [natanaelb]> select * from buku;
++-----------+-----------+------------+--------------+
+| kode_buku | nama_buku | nomor_isbn | tahun_terbit |
++-----------+-----------+------------+--------------+
+|           | B001      | Geografis  | 87213894     |
++-----------+-----------+------------+--------------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from distributor;
++------------------+-------------+
+| kode_distributor | distributor |
++------------------+-------------+
+|                  | wahyu       |
++------------------+-------------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from pembelian;
++----+--------------+-------------------+--------+---------+
+| id | nama_pembeli | judul_buku        | jumlah | harga   |
++----+--------------+-------------------+--------+---------+
+|  1 | natan        | ulum si pencuri   | 1      | 5.000   |
+|  2 | bagas        | cara menjadi dewa | 2      | 150.000 |
+|  3 | penno        | novel             | 124    | 2       |
+|  4 | udin         | komik             | 187    | 1       |
++----+--------------+-------------------+--------+---------+
+4 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from pelanggan;
++----+----------+------------+-----------+--------+
+| id | nama     | jenis_buku | kode_buku | jumlah |
++----+----------+------------+-----------+--------+
+|  1 | jhoncena | komik      | 1945      | 9      |
+|  2 | penno    | novel      | 1140      | 3      |
++----+----------+------------+-----------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from penjualan;
++-----------+------------+---------+--------+-------+
+| kode_buku | judul_buku | nama    | jumlah | harga |
++-----------+------------+---------+--------+-------+
+|         1 | luufy      | sumanto | 600    | 9.000 |
++-----------+------------+---------+--------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]>
+MariaDB [(none)]>
+MariaDB [(none)]>  create user 'natanael'@'localhost';
+Query OK, 0 rows affected (0.252 sec)
+
+MariaDB [(none)]> grant all privileges on *.* to 'natanael'@'localhost';
+Query OK, 0 rows affected (0.095 sec)
+
+MariaDB [(none)]> exit
+Bye
+
+C:\xampp\mysql\bin>mysql -u natanael -p;
+ERROR 1045 (28000): Access denied for user 'natanael'@'localhost' (using password: YES)
+
+C:\xampp\mysql\bin>mysql -u natanael
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> mysql -u natanael
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'mysql -u natanael' at line 1
+MariaDB [(none)]> create database natanaelb;
+Query OK, 1 row affected (0.049 sec)
+
+MariaDB [(none)]> use natanael-b
+ERROR 1049 (42000): Unknown database 'natanael-b'
+MariaDB [(none)]> use natanael_b
+ERROR 1049 (42000): Unknown database 'natanael_b'
+MariaDB [(none)]> use natanaelb
+Database changed
+MariaDB [natanaelb]> create table tokobuku(
+    -> code_buku varchar (20) not null,
+    -> nama_buku varchar (40) not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3
+MariaDB [natanaelb]> crate table buku{
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku{' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku INT PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit INT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku INT PRIMARY KEY,
+nama_buku varchar (100),
+nomor_i...' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> uptade shine_31 set nama="nunung" where id=2;;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+uptade shine_31 set nama="nunung" where id=2' at line 1
+ERROR: No query specified
+
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku INT PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit INT
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku INT PRIMARY KEY,
+nama_buku varchar (100),
+nomor_i...' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku INT PRIMARY KEY,
+    -> nama_buku varchar (40),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit char(50)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku INT PRIMARY KEY,
+nama_buku varchar (40),
+nomor_is...' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku varchar(100),
+    -> nama_buku varchar(40),
+    -> nomor_isbn varchar(20),
+    -> tahun_terbit char(50)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku varchar(100),
+nama_buku varchar(40),
+nomor_isbn v...' at line 1
+MariaDB [natanaelb]> show tables;
+Empty set (0.052 sec)
+
+MariaDB [natanaelb]> create table buku(
+    -> kode_buku varchar(100),
+    -> nama_buku varchar (40),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit char(100)
+    -> );
+Query OK, 0 rows affected (0.278 sec)
+
+MariaDB [natanaelb]> show table buku
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'buku' at line 1
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn (20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRIMARY KEY,
+nama_buku varchar (100),
+nomor_isbn (20)
+)' at line 2
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar (30),
+    ->
+    -> nama_buku varchar (100),
+    -> nomor_isbn (20)
+    -> PRIMARY KEY ( kode_buku )
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(20)
+PRIMARY KEY ( kode_buku )
+)' at line 5
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRIMARY KEY,
+nama_buku varchar (100),
+nomor_isbn varchar (20)
+)' at line 2
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar (30),
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20)
+    -> );
+Query OK, 0 rows affected (0.257 sec)
+
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar PRIMARY KEY,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRIMARY KEY,' at line 2
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar (30),
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20)
+    -> );
+ERROR 1050 (42S01): Table 'detail_buku' already exists
+MariaDB [natanaelb]> drop table detail_buku;
+Query OK, 0 rows affected (0.233 sec)
+
+MariaDB [natanaelb]> ls
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ls' at line 1
+MariaDB [natanaelb]> create table buku_detail(
+    -> kode_buku varchar (20) not null,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20),
+    -> PRIMARY KEY (kode_buku)
+    -> );
+Query OK, 0 rows affected (0.258 sec)
+
+MariaDB [natanaelb]> create table penulis (
+    -> kode_distributor integer  (30) not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 2
+MariaDB [natanaelb]> create table penulis (
+    -> kode_penulis (30) not null,
+    -> p;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(30) not null,
+p' at line 2
+MariaDB [natanaelb]> create table penulis (
+    -> kode_penulis varchar (30) not null,
+    -> penulis varchar ( 40) not null,
+    -> PRIMARY KEY ( kode_penulis)
+    -> );
+Query OK, 0 rows affected (0.176 sec)
+
+MariaDB [natanaelb]> create table Distriutor (
+    -> kode_distributor integer (20),
+    -> distributor varchar (50),
+    -> PRIMARY KEY (kode_distributor)
+    -> );
+Query OK, 0 rows affected (0.243 sec)
+
+MariaDB [natanaelb]> insert into buku_detail( kode_buku , nama_buku , nomor_isbn ) values ( 'B1203' , 'bako' , 97987654916 );
+Query OK, 1 row affected (0.088 sec)
+
+MariaDB [natanaelb]> insert into buku_detail( kode_buku , nama_buku , nomor_isbn ) values ( 'B1204' , 'borax' , 97987654096 );
+Query OK, 1 row affected (0.079 sec)
+
+MariaDB [natanaelb]> insert into table penulis(
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table penulis(' at line 1
+MariaDB [natanaelb]> insert into table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpk. ipu');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpk. ipu')' at line 1
+MariaDB [natanaelb]> insert into table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpkpi');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpkpi')' at line 1
+MariaDB [natanaelb]> insert into penulis( kode_penulis , penulis) values ( 'buas102i', 'bpkpi');
+Query OK, 1 row affected (0.100 sec)
+
+MariaDB [natanaelb]> insert into penulis( kode_penulis , penulis) values ( 'asdm1029', 'andi');
+Query OK, 1 row affected (0.104 sec)
+
+MariaDB [natanaelb]> show database natanaelb
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database natanaelb' at line 1
+MariaDB [natanaelb]> show databases natanaelb;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'natanaelb' at line 1
+MariaDB [natanaelb]> drop table penulis
+    -> ;
+Query OK, 0 rows affected (0.204 sec)
+
+MariaDB [natanaelb]> drop table buku_detail
+    -> ;
+Query OK, 0 rows affected (0.197 sec)
+
+MariaDB [natanaelb]> color red
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'color red' at line 1
+MariaDB [natanaelb]> SELECT * FROM natanaelb;
+ERROR 1146 (42S02): Table 'natanaelb.natanaelb' doesn't exist
+MariaDB [natanaelb]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| alief              |
+| alifia_03          |
+| anggun_04          |
+| farhan_12          |
+| haikalxy           |
+| haikalzy           |
+| information_schema |
+| laundry_20         |
+| mysql              |
+| natanaelb          |
+| performance_schema |
+| phpmyadmin         |
+| sevita_34          |
++--------------------+
+13 rows in set (0.002 sec)
+
+MariaDB [natanaelb]> CREATE TABLE Distributor (
+    -> kode_distributor varchar (30) not null,
+    -> distributor varchar (100) not null,
+    -> PRIMARY KEY (kode_distributor)
+    -> );
+Query OK, 0 rows affected (0.229 sec)
+
+MariaDB [natanaelb]> create table pembelian (
+    -> id_pembelian varchar (30) not null,
+    -> nama_pembeli text (40) not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3
+MariaDB [natanaelb]> create table pembelian (
+    -> id_barang varchar (30) not null,
+    -> nama_pembeli text (40) not null,
+    -> PRIMARY KEY (id_barang)
+    -> );
+Query OK, 0 rows affected (0.202 sec)
+
+MariaDB [natanaelb]> drop table pembelian
+    -> ;
+Query OK, 0 rows affected (0.211 sec)
+
+MariaDB [natanaelb]> create table pelanggan (
+    -> id_pelanggan varchar (90) not null,
+    -> id_barang varchar (100) not null,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> Ctrl-C -- exit!
+Bye
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 12
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> Ctrl-C -- exit!
+Bye
+
+C:\xampp\mysql\bin>mysql -u natanael
+
+C:\xampp\mysql\bin>mysql -u natanael
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 13
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| alief              |
+| alifia_03          |
+| anggun_04          |
+| farhan_12          |
+| haikalxy           |
+| haikalzy           |
+| information_schema |
+| laundry_20         |
+| mysql              |
+| natanaelb          |
+| performance_schema |
+| phpmyadmin         |
+| sevita_34          |
++--------------------+
+13 rows in set (0.004 sec)
+
+MariaDB [(none)]> use natanaelb;
+Database changed
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
+| distriutor          |
++---------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> create table pembelian(
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 2
+MariaDB [natanaelb]> drop table distriutor;
+Query OK, 0 rows affected (0.231 sec)
+
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
++---------------------+
+2 rows in set (0.002 sec)
+
+MariaDB [natanaelb]> create table pembelian(
+    -> id int primary key auto_increment,
+    -> nama pembeli varchar(50),
+    -> judul buku
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'varchar(50),
+judul buku
+)' at line 3
+MariaDB [natanaelb]> create table pembelian(
+    -> id int primary key auto_increment,
+    -> nama_pembeli varchar(50),
+    -> judul_buku varchar(100),
+    -> jumlah char(20),
+    -> harga char(150)
+    -> );
+Query OK, 0 rows affected (0.258 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('', 'natan', 'ulum si pencuri', '1', '5.000');
+Query OK, 1 row affected, 1 warning (0.089 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('', 'bagas', 'cara menjadi dewa', '2', '150.000');
+Query OK, 1 row affected, 1 warning (0.093 sec)
+
+MariaDB [natanaelb]> create table pelanggan(
+    -> id int primary key auto_increment,
+    -> nama varchar(50),
+    -> jenis_buku varchar(100),
+    -> kode_buku char(150),
+    -> jumlah char(20)
+    -> );
+Query OK, 0 rows affected (0.257 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('','penno', 'novel', '124', '2');
+Query OK, 1 row affected, 1 warning (0.214 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('','udin', 'komik', '187', '1');
+Query OK, 1 row affected, 1 warning (0.086 sec)
+
+MariaDB [natanaelb]> create table penjualan(
+    -> kode_buku int primary key auto_increment,
+    -> judul_buku varchar(100),
+    -> nama varchar(50),
+    -> jumlah char(60),
+    -> harga char(70)
+    -> );
+Query OK, 0 rows affected (0.411 sec)
+
+MariaDB [natanaelb]> insert into penjualan values ('','luufy','sumanto','600','9.000');
+Query OK, 1 row affected, 1 warning (0.098 sec)
+
+MariaDB [natanaelb]> insert into penjualan values ('','alekkkkk','jumanto',90','1.000');
+    '> );Bye
+Ctrl-C -- exit!
+
+C:\xampp\mysql\bin>use natanaelb;
+'use' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp\mysql\bin>use natanaelb
+'use' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 14
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use natanaelb
+Database changed
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
+| pelanggan           |
+| pembelian           |
+| penjualan           |
++---------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from buku;
+Empty set (0.004 sec)
+
+MariaDB [natanaelb]> select * from buku;
+Empty set (0.001 sec)
+
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
+| pelanggan           |
+| pembelian           |
+| penjualan           |
++---------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from distributor;
+Empty set (0.004 sec)
+
+MariaDB [natanaelb]> select * from penjualan;
++-----------+------------+---------+--------+-------+
+| kode_buku | judul_buku | nama    | jumlah | harga |
++-----------+------------+---------+--------+-------+
+|         1 | luufy      | sumanto | 600    | 9.000 |
++-----------+------------+---------+--------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from pembelian;
++----+--------------+-------------------+--------+---------+
+| id | nama_pembeli | judul_buku        | jumlah | harga   |
++----+--------------+-------------------+--------+---------+
+|  1 | natan        | ulum si pencuri   | 1      | 5.000   |
+|  2 | bagas        | cara menjadi dewa | 2      | 150.000 |
+|  3 | penno        | novel             | 124    | 2       |
+|  4 | udin         | komik             | 187    | 1       |
++----+--------------+-------------------+--------+---------+
+4 rows in set (0.001 sec)
+
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> select * from pelanggan;
+Empty set (0.004 sec)
+
+MariaDB [natanaelb]> select * from pelanggan;
+Empty set (0.001 sec)
+
+MariaDB [natanaelb]> insert into pelanggan values(''.'jhoncena','komik','1945','9');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.'jhoncena','komik','1945','9')' at line 1
+MariaDB [natanaelb]> insert into pelanggan values('','jhoncena','komik','1945','9');
+Query OK, 1 row affected, 1 warning (0.084 sec)
+
+MariaDB [natanaelb]> insert into pelanggan values('','penno','novel','1140','3');
+Query OK, 1 row affected, 1 warning (0.084 sec)
+
+MariaDB [natanaelb]> selectl * from pelanggan;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'selectl * from pelanggan' at line 1
+MariaDB [natanaelb]> select * from pelanggan;
++----+----------+------------+-----------+--------+
+| id | nama     | jenis_buku | kode_buku | jumlah |
++----+----------+------------+-----------+--------+
+|  1 | jhoncena | komik      | 1945      | 9      |
+|  2 | penno    | novel      | 1140      | 3      |
++----+----------+------------+-----------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> insert into distribtor values ('','1','wahyu');
+ERROR 1146 (42S02): Table 'natanaelb.distribtor' doesn't exist
+MariaDB [natanaelb]> insert into distribtor values ('','88','wahyu');
+ERROR 1146 (42S02): Table 'natanaelb.distribtor' doesn't exist
+MariaDB [natanaelb]> insert into distributor values ('','88','wahyu');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into distributor values ('1','88','wahyu');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into distributor values('','88','wahyu');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into distributor values('','wahyu');
+Query OK, 1 row affected (0.086 sec)
+
+MariaDB [natanaelb]> select * from distributor;
++------------------+-------------+
+| kode_distributor | distributor |
++------------------+-------------+
+|                  | wahyu       |
++------------------+-------------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> insert into buku values('','B001','Geografis','87213894','Gramedia','2002','penno','90');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into buku values('','B001','Geografis','87213894','Gramedia','2002','penno','90');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> insert into buku values('','B001','Geografis','87213894');
+Query OK, 1 row affected (0.142 sec)
+
+MariaDB [natanaelb]> select * from buku:
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':' at line 1
+MariaDB [natanaelb]> select * from buku;
++-----------+-----------+------------+--------------+
+| kode_buku | nama_buku | nomor_isbn | tahun_terbit |
++-----------+-----------+------------+--------------+
+|           | B001      | Geografis  | 87213894     |
++-----------+-----------+------------+--------------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from distributor;
++------------------+-------------+
+| kode_distributor | distributor |
++------------------+-------------+
+|                  | wahyu       |
++------------------+-------------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from pembelian;
++----+--------------+-------------------+--------+---------+
+| id | nama_pembeli | judul_buku        | jumlah | harga   |
++----+--------------+-------------------+--------+---------+
+|  1 | natan        | ulum si pencuri   | 1      | 5.000   |
+|  2 | bagas        | cara menjadi dewa | 2      | 150.000 |
+|  3 | penno        | novel             | 124    | 2       |
+|  4 | udin         | komik             | 187    | 1       |
++----+--------------+-------------------+--------+---------+
+4 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from pelanggan;
++----+----------+------------+-----------+--------+
+| id | nama     | jenis_buku | kode_buku | jumlah |
++----+----------+------------+-----------+--------+
+|  1 | jhoncena | komik      | 1945      | 9      |
+|  2 | penno    | novel      | 1140      | 3      |
++----+----------+------------+-----------+--------+
+2 rows in set (0.001 sec)
+
+
+MariaDB [(none)]>
+MariaDB [(none)]>  create user 'natanael'@'localhost';
+Query OK, 0 rows affected (0.252 sec)
+
+MariaDB [(none)]> grant all privileges on *.* to 'natanael'@'localhost';
+Query OK, 0 rows affected (0.095 sec)
+
+MariaDB [(none)]> exit
+Bye
+
+C:\xampp\mysql\bin>mysql -u natanael -p;
+ERROR 1045 (28000): Access denied for user 'natanael'@'localhost' (using password: YES)
+
+C:\xampp\mysql\bin>mysql -u natanael
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> mysql -u natanael
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'mysql -u natanael' at line 1
+MariaDB [(none)]> create database natanaelb;
+Query OK, 1 row affected (0.049 sec)
+
+MariaDB [(none)]> use natanael-b
+ERROR 1049 (42000): Unknown database 'natanael-b'
+MariaDB [(none)]> use natanael_b
+ERROR 1049 (42000): Unknown database 'natanael_b'
+MariaDB [(none)]> use natanaelb
+Database changed
+MariaDB [natanaelb]> create table tokobuku(
+    -> code_buku varchar (20) not null,
+    -> nama_buku varchar (40) not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3
+MariaDB [natanaelb]> crate table buku{
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku{' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku INT PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit INT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku INT PRIMARY KEY,
+nama_buku varchar (100),
+nomor_i...' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> uptade shine_31 set nama="nunung" where id=2;;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+uptade shine_31 set nama="nunung" where id=2' at line 1
+ERROR: No query specified
+
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku INT PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit INT
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku INT PRIMARY KEY,
+nama_buku varchar (100),
+nomor_i...' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku INT PRIMARY KEY,
+    -> nama_buku varchar (40),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit char(50)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku INT PRIMARY KEY,
+nama_buku varchar (40),
+nomor_is...' at line 1
+MariaDB [natanaelb]> crate table buku(
+    -> kode_buku varchar(100),
+    -> nama_buku varchar(40),
+    -> nomor_isbn varchar(20),
+    -> tahun_terbit char(50)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'crate table buku(
+kode_buku varchar(100),
+nama_buku varchar(40),
+nomor_isbn v...' at line 1
+MariaDB [natanaelb]> show tables;
+Empty set (0.052 sec)
+
+MariaDB [natanaelb]> create table buku(
+    -> kode_buku varchar(100),
+    -> nama_buku varchar (40),
+    -> nomor_isbn varchar (20),
+    -> tahun_terbit char(100)
+    -> );
+Query OK, 0 rows affected (0.278 sec)
+
+MariaDB [natanaelb]> show table buku
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'buku' at line 1
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn (20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRIMARY KEY,
+nama_buku varchar (100),
+nomor_isbn (20)
+)' at line 2
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar (30),
+    ->
+    -> nama_buku varchar (100),
+    -> nomor_isbn (20)
+    -> PRIMARY KEY ( kode_buku )
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(20)
+PRIMARY KEY ( kode_buku )
+)' at line 5
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar PRIMARY KEY,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRIMARY KEY,
+nama_buku varchar (100),
+nomor_isbn varchar (20)
+)' at line 2
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar (30),
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20)
+    -> );
+Query OK, 0 rows affected (0.257 sec)
+
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar PRIMARY KEY,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRIMARY KEY,' at line 2
+MariaDB [natanaelb]> create table detail_buku(
+    -> kode_buku varchar (30),
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20)
+    -> );
+ERROR 1050 (42S01): Table 'detail_buku' already exists
+MariaDB [natanaelb]> drop table detail_buku;
+Query OK, 0 rows affected (0.233 sec)
+
+MariaDB [natanaelb]> ls
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ls' at line 1
+MariaDB [natanaelb]> create table buku_detail(
+    -> kode_buku varchar (20) not null,
+    -> nama_buku varchar (100),
+    -> nomor_isbn varchar (20),
+    -> PRIMARY KEY (kode_buku)
+    -> );
+Query OK, 0 rows affected (0.258 sec)
+
+MariaDB [natanaelb]> create table penulis (
+    -> kode_distributor integer  (30) not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 2
+MariaDB [natanaelb]> create table penulis (
+    -> kode_penulis (30) not null,
+    -> p;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(30) not null,
+p' at line 2
+MariaDB [natanaelb]> create table penulis (
+    -> kode_penulis varchar (30) not null,
+    -> penulis varchar ( 40) not null,
+    -> PRIMARY KEY ( kode_penulis)
+    -> );
+Query OK, 0 rows affected (0.176 sec)
+
+MariaDB [natanaelb]> create table Distriutor (
+    -> kode_distributor integer (20),
+    -> distributor varchar (50),
+    -> PRIMARY KEY (kode_distributor)
+    -> );
+Query OK, 0 rows affected (0.243 sec)
+
+MariaDB [natanaelb]> insert into buku_detail( kode_buku , nama_buku , nomor_isbn ) values ( 'B1203' , 'bako' , 97987654916 );
+Query OK, 1 row affected (0.088 sec)
+
+MariaDB [natanaelb]> insert into buku_detail( kode_buku , nama_buku , nomor_isbn ) values ( 'B1204' , 'borax' , 97987654096 );
+Query OK, 1 row affected (0.079 sec)
+
+MariaDB [natanaelb]> insert into table penulis(
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table penulis(' at line 1
+MariaDB [natanaelb]> insert into table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpk. ipu');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpk. ipu')' at line 1
+MariaDB [natanaelb]> insert into table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpkpi');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table penulis( kode_penulis , penulis) values ( 'buas102i', 'bpkpi')' at line 1
+MariaDB [natanaelb]> insert into penulis( kode_penulis , penulis) values ( 'buas102i', 'bpkpi');
+Query OK, 1 row affected (0.100 sec)
+
+MariaDB [natanaelb]> insert into penulis( kode_penulis , penulis) values ( 'asdm1029', 'andi');
+Query OK, 1 row affected (0.104 sec)
+
+MariaDB [natanaelb]> show database natanaelb
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database natanaelb' at line 1
+MariaDB [natanaelb]> show databases natanaelb;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'natanaelb' at line 1
+MariaDB [natanaelb]> drop table penulis
+    -> ;
+Query OK, 0 rows affected (0.204 sec)
+
+MariaDB [natanaelb]> drop table buku_detail
+    -> ;
+Query OK, 0 rows affected (0.197 sec)
+
+MariaDB [natanaelb]> color red
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'color red' at line 1
+MariaDB [natanaelb]> SELECT * FROM natanaelb;
+ERROR 1146 (42S02): Table 'natanaelb.natanaelb' doesn't exist
+MariaDB [natanaelb]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| alief              |
+| alifia_03          |
+| anggun_04          |
+| farhan_12          |
+| haikalxy           |
+| haikalzy           |
+| information_schema |
+| laundry_20         |
+| mysql              |
+| natanaelb          |
+| performance_schema |
+| phpmyadmin         |
+| sevita_34          |
++--------------------+
+13 rows in set (0.002 sec)
+
+MariaDB [natanaelb]> CREATE TABLE Distributor (
+    -> kode_distributor varchar (30) not null,
+    -> distributor varchar (100) not null,
+    -> PRIMARY KEY (kode_distributor)
+    -> );
+Query OK, 0 rows affected (0.229 sec)
+
+MariaDB [natanaelb]> create table pembelian (
+    -> id_pembelian varchar (30) not null,
+    -> nama_pembeli text (40) not null,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3
+MariaDB [natanaelb]> create table pembelian (
+    -> id_barang varchar (30) not null,
+    -> nama_pembeli text (40) not null,
+    -> PRIMARY KEY (id_barang)
+    -> );
+Query OK, 0 rows affected (0.202 sec)
+
+MariaDB [natanaelb]> drop table pembelian
+    -> ;
+Query OK, 0 rows affected (0.211 sec)
+
+MariaDB [natanaelb]> create table pelanggan (
+    -> id_pelanggan varchar (90) not null,
+    -> id_barang varchar (100) not null,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> Ctrl-C -- exit!
+Bye
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 12
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> Ctrl-C -- exit!
+Bye
+
+C:\xampp\mysql\bin>mysql -u natanael
+
+C:\xampp\mysql\bin>mysql -u natanael
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 13
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| alief              |
+| alifia_03          |
+| anggun_04          |
+| farhan_12          |
+| haikalxy           |
+| haikalzy           |
+| information_schema |
+| laundry_20         |
+| mysql              |
+| natanaelb          |
+| performance_schema |
+| phpmyadmin         |
+| sevita_34          |
++--------------------+
+13 rows in set (0.004 sec)
+
+MariaDB [(none)]> use natanaelb;
+Database changed
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
+| distriutor          |
++---------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> create table pembelian(
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 2
+MariaDB [natanaelb]> drop table distriutor;
+Query OK, 0 rows affected (0.231 sec)
+
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
++---------------------+
+2 rows in set (0.002 sec)
+
+MariaDB [natanaelb]> create table pembelian(
+    -> id int primary key auto_increment,
+    -> nama pembeli varchar(50),
+    -> judul buku
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'varchar(50),
+judul buku
+)' at line 3
+MariaDB [natanaelb]> create table pembelian(
+    -> id int primary key auto_increment,
+    -> nama_pembeli varchar(50),
+    -> judul_buku varchar(100),
+    -> jumlah char(20),
+    -> harga char(150)
+    -> );
+Query OK, 0 rows affected (0.258 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('', 'natan', 'ulum si pencuri', '1', '5.000');
+Query OK, 1 row affected, 1 warning (0.089 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('', 'bagas', 'cara menjadi dewa', '2', '150.000');
+Query OK, 1 row affected, 1 warning (0.093 sec)
+
+MariaDB [natanaelb]> create table pelanggan(
+    -> id int primary key auto_increment,
+    -> nama varchar(50),
+    -> jenis_buku varchar(100),
+    -> kode_buku char(150),
+    -> jumlah char(20)
+    -> );
+Query OK, 0 rows affected (0.257 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('','penno', 'novel', '124', '2');
+Query OK, 1 row affected, 1 warning (0.214 sec)
+
+MariaDB [natanaelb]> insert into pembelian values('','udin', 'komik', '187', '1');
+Query OK, 1 row affected, 1 warning (0.086 sec)
+
+MariaDB [natanaelb]> create table penjualan(
+    -> kode_buku int primary key auto_increment,
+    -> judul_buku varchar(100),
+    -> nama varchar(50),
+    -> jumlah char(60),
+    -> harga char(70)
+    -> );
+Query OK, 0 rows affected (0.411 sec)
+
+MariaDB [natanaelb]> insert into penjualan values ('','luufy','sumanto','600','9.000');
+Query OK, 1 row affected, 1 warning (0.098 sec)
+
+MariaDB [natanaelb]> insert into penjualan values ('','alekkkkk','jumanto',90','1.000');
+    '> );Bye
+Ctrl-C -- exit!
+
+C:\xampp\mysql\bin>use natanaelb;
+'use' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp\mysql\bin>use natanaelb
+'use' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 14
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use natanaelb
+Database changed
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
+| pelanggan           |
+| pembelian           |
+| penjualan           |
++---------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from buku;
+Empty set (0.004 sec)
+
+MariaDB [natanaelb]> select * from buku;
+Empty set (0.001 sec)
+
+MariaDB [natanaelb]> show tables;
++---------------------+
+| Tables_in_natanaelb |
++---------------------+
+| buku                |
+| distributor         |
+| pelanggan           |
+| pembelian           |
+| penjualan           |
++---------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from distributor;
+Empty set (0.004 sec)
+
+MariaDB [natanaelb]> select * from penjualan;
++-----------+------------+---------+--------+-------+
+| kode_buku | judul_buku | nama    | jumlah | harga |
++-----------+------------+---------+--------+-------+
+|         1 | luufy      | sumanto | 600    | 9.000 |
++-----------+------------+---------+--------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from pembelian;
++----+--------------+-------------------+--------+---------+
+| id | nama_pembeli | judul_buku        | jumlah | harga   |
++----+--------------+-------------------+--------+---------+
+|  1 | natan        | ulum si pencuri   | 1      | 5.000   |
+|  2 | bagas        | cara menjadi dewa | 2      | 150.000 |
+|  3 | penno        | novel             | 124    | 2       |
+|  4 | udin         | komik             | 187    | 1       |
++----+--------------+-------------------+--------+---------+
+4 rows in set (0.001 sec)
+
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> select * from pelanggan;
+Empty set (0.004 sec)
+
+MariaDB [natanaelb]> select * from pelanggan;
+Empty set (0.001 sec)
+
+MariaDB [natanaelb]> insert into pelanggan values(''.'jhoncena','komik','1945','9');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.'jhoncena','komik','1945','9')' at line 1
+MariaDB [natanaelb]> insert into pelanggan values('','jhoncena','komik','1945','9');
+Query OK, 1 row affected, 1 warning (0.084 sec)
+
+MariaDB [natanaelb]> insert into pelanggan values('','penno','novel','1140','3');
+Query OK, 1 row affected, 1 warning (0.084 sec)
+
+MariaDB [natanaelb]> selectl * from pelanggan;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'selectl * from pelanggan' at line 1
+MariaDB [natanaelb]> select * from pelanggan;
++----+----------+------------+-----------+--------+
+| id | nama     | jenis_buku | kode_buku | jumlah |
++----+----------+------------+-----------+--------+
+|  1 | jhoncena | komik      | 1945      | 9      |
+|  2 | penno    | novel      | 1140      | 3      |
++----+----------+------------+-----------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> insert into distribtor values ('','1','wahyu');
+ERROR 1146 (42S02): Table 'natanaelb.distribtor' doesn't exist
+MariaDB [natanaelb]> insert into distribtor values ('','88','wahyu');
+ERROR 1146 (42S02): Table 'natanaelb.distribtor' doesn't exist
+MariaDB [natanaelb]> insert into distributor values ('','88','wahyu');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into distributor values ('1','88','wahyu');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into distributor values('','88','wahyu');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into distributor values('','wahyu');
+Query OK, 1 row affected (0.086 sec)
+
+MariaDB [natanaelb]> select * from distributor;
++------------------+-------------+
+| kode_distributor | distributor |
++------------------+-------------+
+|                  | wahyu       |
++------------------+-------------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> insert into buku values('','B001','Geografis','87213894','Gramedia','2002','penno','90');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]> insert into buku values('','B001','Geografis','87213894','Gramedia','2002','penno','90');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]>
+MariaDB [natanaelb]> insert into buku values('','B001','Geografis','87213894');
+Query OK, 1 row affected (0.142 sec)
+
+MariaDB [natanaelb]> select * from buku:
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':' at line 1
+MariaDB [natanaelb]> select * from buku;
++-----------+-----------+------------+--------------+
+| kode_buku | nama_buku | nomor_isbn | tahun_terbit |
++-----------+-----------+------------+--------------+
+|           | B001      | Geografis  | 87213894     |
++-----------+-----------+------------+--------------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from distributor;
++------------------+-------------+
+| kode_distributor | distributor |
++------------------+-------------+
+|                  | wahyu       |
++------------------+-------------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from pembelian;
++----+--------------+-------------------+--------+---------+
+| id | nama_pembeli | judul_buku        | jumlah | harga   |
++----+--------------+-------------------+--------+---------+
+|  1 | natan        | ulum si pencuri   | 1      | 5.000   |
+|  2 | bagas        | cara menjadi dewa | 2      | 150.000 |
+|  3 | penno        | novel             | 124    | 2       |
+|  4 | udin         | komik             | 187    | 1       |
++----+--------------+-------------------+--------+---------+
+4 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from pelanggan;
++----+----------+------------+-----------+--------+
+| id | nama     | jenis_buku | kode_buku | jumlah |
++----+----------+------------+-----------+--------+
+|  1 | jhoncena | komik      | 1945      | 9      |
+|  2 | penno    | novel      | 1140      | 3      |
++----+----------+------------+-----------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [natanaelb]> select * from penjualan;
++-----------+------------+---------+--------+-------+
+| kode_buku | judul_buku | nama    | jumlah | harga |
++-----------+------------+---------+--------+-------+
+|         1 | luufy      | sumanto | 600    | 9.000 |
++-----------+------------+---------+--------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]>+-----------+------------+---------+--------+-------+
+| kode_buku | judul_buku | nama    | jumlah | harga |
++-----------+------------+---------+--------+-------+
+|         1 | luufy      | sumanto | 600    | 9.000 |
++-----------+------------+---------+--------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [natanaelb]>
